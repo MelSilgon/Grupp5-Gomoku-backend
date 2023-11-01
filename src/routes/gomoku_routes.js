@@ -14,4 +14,22 @@ router.get('/play', (req, res) => {
     res.json(gameData)
 })
 
+const players = []
+
+router.get('/player/create', (req, res) => {
+    const name = req.query.name
+
+    if (!name) {
+        return res.status(400).json({ error: 'Name is required' })
+    }
+
+    const player = {
+        id: uuid.v4(),
+        name: name
+    }
+
+    players.push(player)
+    res.status(201).json(player)
+})
+
 module.exports = router
