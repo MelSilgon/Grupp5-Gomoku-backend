@@ -14,7 +14,7 @@ router.get('/add_player', (req, res) => {
 })
 
 router.get('/play', (req, res) => {
-    res.json(emptyData)
+    res.json(gameData)
 })
 
 // Different games
@@ -34,4 +34,14 @@ router.get('/black', (req, res) => {
     res.json(blackData);
 });
 
-module.exports = router
+router.post("/update_game", (req, res) => {
+    const updatedGameData = req.body;
+
+    gameData.board.tiles = updatedGameData.board.tiles;
+    gameData.player = updatedGameData.player;
+    gameData.state = updatedGameData.state;
+
+    res.json(gameData);
+  });
+
+module.exports = router;

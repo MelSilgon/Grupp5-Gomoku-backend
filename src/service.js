@@ -1,8 +1,10 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 const cors = require("cors");
-app.use(cors());
 
+app.use(cors());
+app.use(bodyParser.json());
 app.use(express.json());
 app.use("/api/gomoku", require("./routes/gomoku_routes.js"));
 
