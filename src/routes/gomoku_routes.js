@@ -1,16 +1,16 @@
-const express = require('express')
+const express = require("express")
 const router = express.Router()
-const emptyData = require('./empty_game.json')
+const gameData = require('./empty_game.json')
 const fullData = require('./full_game.json')
 const whiteData = require('./white_game.json')
 const blackData = require('./black_game.json')
 
 router.get('/create_game', (req, res) => {
-    res.json(emptyData)
+    res.json(gameData)
 })
 
 router.get('/add_player', (req, res) => {
-    res.json(emptyData)
+    res.json(gameData)
 })
 
 router.get('/play', (req, res) => {
@@ -18,9 +18,6 @@ router.get('/play', (req, res) => {
 })
 
 // Different games
-router.get('/empty', (req, res) => {
-    res.json(emptyData);
-});
 
 router.get('/full', (req, res) => {
     res.json(fullData);

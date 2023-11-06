@@ -3,8 +3,14 @@
     "name": "black game",
     "round": 256,
     "player": 1,
-    "player1": null,
-    "player2": null,
+    "player1": {
+        "id": "",
+        "name": "Bob"
+    },
+    "player2": {
+        "id": "",
+        "name": "Also Bob"
+    },
     "state": "black",
     "board": {
       "minInRow": 5,
